@@ -19,7 +19,7 @@ var updateParagraph = function () {
       'If you\'re interested in a date, you can email me at ' +
       '<a href="mailto:' + contactEmail + '"' + 'target="_blank">' + contactEmail + '</a>' +
       ' or give me a call at ' +
-      '<a href="tel:PHONE_NUMBER" target="_blank">' + contactPhone + '</a>' + '.' +
+      '<a href="tel:' + contactPhone + '"' + 'target="_blank">' + contactPhone + '</a>' + '.' +
     '</p>'
 }
 
@@ -36,7 +36,7 @@ var updateHTML = function () {
       'If you\'re interested in a date, you can email me at ' +
       '<a href="mailto:' + contactEmail + '"' + 'target="_blank">' + contactEmail + '</a>' +
       ' or give me a call at ' +
-      '<a href="tel:PHONE_NUMBER" target="_blank">' + contactPhone + '</a>' + '.' +
+      '<a href="tel:' + contactPhone + '"' + 'target="_blank">' + contactPhone + '</a>' + '.' +
     '</p>'
 }
 firstNameInput.addEventListener('input', updateParagraph)
