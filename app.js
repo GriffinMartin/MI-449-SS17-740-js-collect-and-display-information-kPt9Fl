@@ -1,45 +1,28 @@
-var firstNameInput = document.getElementById('first-name')
-var lastNameInput = document.getElementById('last-name')
-var personalDescriptionInput = document.getElementById('personal-description')
-var contactEmailInput = document.getElementById('contact-email')
-var contactPhoneInput = document.getElementById('contact-phone')
-var outputParagraph = document.getElementById('preview')
-var outputHTML = document.getElementById('update-html')
+var firstName = document.getElementById('first-name')
+var lastName = document.getElementById('last-name')
+var selfBio = document.getElementById('self-bio')
+var contactEmail = document.getElementById('contact-email')
+var contactPhone = document.getElementById('contact-phone')
 
-var updateHTML = function () {
-  var firstName = firstNameInput.value
-  var lastName = lastNameInput.value
-  var personalDescription = personalDescriptionInput.value
-  var contactEmail = contactEmailInput.value
-  var contactPhone = contactPhoneInput.value
-  outputParagraph.innerHTML =
-    '<h1>' + 'Hi, my name is ' + firstName + ' ' + lastName + '</h1>' +
-    '<p>' + personalDescription + '</p>' +
+var preview = document.getElementById('preview')
+var htmlPreview = document.getElementById('html-preview')
+
+function updateHTML() {
+  var outputFormat =
+    '<h1>' + 'Hi, my name is ' + firstName.value + ' ' + lastName.value + '</h1>' +
+    '<p>' + selfBio.value + '</p>' +
     '<p>' +
       'If you\'re interested in a date, you can email me at ' +
-      '<a href="mailto:' + contactEmail + '"' + 'target="_blank">' + contactEmail + '</a>' +
+      '<a href="mailto:' + contactEmail.value + '"' + 'target="_blank">' + contactEmail.value + '</a>' +
       ' or give me a call at ' +
-      '<a href="tel:' + contactPhone + '"' + 'target="_blank">' + contactPhone + '</a>' + '.' +
+      '<a href="tel:' + contactPhone.value + '"' + 'target="_blank">' + contactPhone.value + '</a>' + '.' +
     '</p>'
-  outputHTML.textContent =
-    '<h1>' + 'Hi, my name is ' + firstName + ' ' + lastName + '</h1>' +
-    '<p>' + personalDescription + '</p>' +
-    '<p>' +
-      'If you\'re interested in a date, you can email me at ' +
-      '<a href="mailto:' + contactEmail + '"' + 'target="_blank">' + contactEmail + '</a>' +
-      ' or give me a call at ' +
-      '<a href="tel:' + contactPhone + '"' + 'target="_blank">' + contactPhone + '</a>' + '.' +
-    '</p>'
+  preview.innerHTML = outputFormat
+  htmlPreview.textContent = outputFormat
 }
 
-firstNameInput.addEventListener('input', updateHTML)
-lastNameInput.addEventListener('input', updateHTML)
-personalDescriptionInput.addEventListener('input', updateHTML)
-contactEmailInput.addEventListener('input', updateHTML)
-contactPhoneInput.addEventListener('input', updateHTML)
-
-firstNameInput.addEventListener('input', updateHTML)
-lastNameInput.addEventListener('input', updateHTML)
-personalDescriptionInput.addEventListener('input', updateHTML)
-contactEmailInput.addEventListener('input', updateHTML)
-contactPhoneInput.addEventListener('input', updateHTML)
+firstName.addEventListener('input', updateHTML)
+lastName.addEventListener('input', updateHTML)
+selfBio.addEventListener('input', updateHTML)
+contactEmail.addEventListener('input', updateHTML)
+contactPhone.addEventListener('input', updateHTML)
