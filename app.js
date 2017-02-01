@@ -6,7 +6,7 @@ var contactPhoneInput = document.getElementById('contact-phone')
 var outputParagraph = document.getElementById('preview')
 var outputHTML = document.getElementById('update-html')
 
-var updateParagraph = function () {
+var updateHTML = function () {
   var firstName = firstNameInput.value
   var lastName = lastNameInput.value
   var personalDescription = personalDescriptionInput.value
@@ -21,14 +21,6 @@ var updateParagraph = function () {
       ' or give me a call at ' +
       '<a href="tel:' + contactPhone + '"' + 'target="_blank">' + contactPhone + '</a>' + '.' +
     '</p>'
-}
-
-var updateHTML = function () {
-  var firstName = firstNameInput.value
-  var lastName = lastNameInput.value
-  var personalDescription = personalDescriptionInput.value
-  var contactEmail = contactEmailInput.value
-  var contactPhone = contactPhoneInput.value
   outputHTML.textContent =
     '<h1>' + 'Hi, my name is ' + firstName + ' ' + lastName + '</h1>' +
     '<p>' + personalDescription + '</p>' +
@@ -39,11 +31,12 @@ var updateHTML = function () {
       '<a href="tel:' + contactPhone + '"' + 'target="_blank">' + contactPhone + '</a>' + '.' +
     '</p>'
 }
-firstNameInput.addEventListener('input', updateParagraph)
-lastNameInput.addEventListener('input', updateParagraph)
-personalDescriptionInput.addEventListener('input', updateParagraph)
-contactEmailInput.addEventListener('input', updateParagraph)
-contactPhoneInput.addEventListener('input', updateParagraph)
+
+firstNameInput.addEventListener('input', updateHTML)
+lastNameInput.addEventListener('input', updateHTML)
+personalDescriptionInput.addEventListener('input', updateHTML)
+contactEmailInput.addEventListener('input', updateHTML)
+contactPhoneInput.addEventListener('input', updateHTML)
 
 firstNameInput.addEventListener('input', updateHTML)
 lastNameInput.addEventListener('input', updateHTML)
